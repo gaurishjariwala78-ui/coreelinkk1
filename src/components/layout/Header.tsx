@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "glass py-4" : "bg-transparent py-6"
+        isScrolled ? "glass py-3 sm:py-4" : "bg-transparent py-4 sm:py-6"
       }`}
     >
       <div className="container mx-auto container-padding">
@@ -37,7 +37,7 @@ const Header = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-2xl font-heading font-bold tracking-tight"
+              className="text-xl sm:text-2xl font-heading font-bold tracking-tight"
             >
               CORE<span className="gradient-text">LINK</span>
             </motion.div>
@@ -105,7 +105,7 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button variant="hero" size="lg" className="mt-4">
+              <Button variant="hero" size="default" className="mt-4 w-full">
                 Book a Strategy Call
               </Button>
             </div>

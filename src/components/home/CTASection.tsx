@@ -26,22 +26,22 @@ const CTASection = () => {
           <div className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-accent-warm/20 blur-[100px]" />
           
           {/* Content */}
-          <div className="relative z-10 px-8 py-20 md:px-16 md:py-24 text-center">
+          <div className="relative z-10 px-5 py-12 sm:px-8 sm:py-16 md:px-16 md:py-24 text-center">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-headline font-heading text-primary-foreground mb-6"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading text-primary-foreground mb-4 sm:mb-6"
             >
               Ready to Transform Your{" "}
-              <span className="text-accent">Digital Presence?</span>
+              <span className="text-accent block sm:inline">Digital Presence?</span>
             </motion.h2>
             
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-primary-foreground/80 text-body-lg max-w-2xl mx-auto mb-10"
+              className="text-primary-foreground/80 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 px-2"
             >
               Let's discuss how we can help you build a powerful brand, 
               grow your audience, and achieve your business goals.
@@ -51,10 +51,11 @@ const CTASection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
+              className="px-2"
             >
-              <Button variant="accent" size="xl" className="group">
-                Book Your Free Strategy Call
-                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              <Button variant="accent" size="xl" className="group w-full sm:w-auto">
+                <span>Book Your Free Strategy Call</span>
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1 flex-shrink-0" />
               </Button>
             </motion.div>
           </div>

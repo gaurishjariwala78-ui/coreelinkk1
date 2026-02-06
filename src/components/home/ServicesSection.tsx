@@ -61,12 +61,12 @@ const ServicesSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-10 sm:mb-12 md:mb-16"
         >
           <span className="text-accent font-medium text-sm uppercase tracking-wider">
             Our Services
           </span>
-          <h2 className="text-headline font-heading mt-4 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading mt-4 mb-4 sm:mb-6">
             Everything You Need to{" "}
             <span className="gradient-text">Dominate Digital</span>
           </h2>
@@ -77,7 +77,7 @@ const ServicesSection = () => {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -86,10 +86,10 @@ const ServicesSection = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group premium-card hover:border-accent/20 border border-transparent"
             >
-              <div className="w-14 h-14 rounded-2xl bg-secondary group-hover:gradient-accent transition-all duration-500 flex items-center justify-center mb-6">
-                <service.icon className="w-6 h-6 text-foreground group-hover:text-primary-foreground transition-colors duration-500" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-secondary group-hover:gradient-accent transition-all duration-500 flex items-center justify-center mb-4 sm:mb-6">
+                <service.icon className="w-5 h-5 sm:w-6 sm:h-6 text-foreground group-hover:text-primary-foreground transition-colors duration-500" />
               </div>
-              <h3 className="text-xl font-heading font-semibold mb-3">
+              <h3 className="text-lg sm:text-xl font-heading font-semibold mb-2 sm:mb-3">
                 {service.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">

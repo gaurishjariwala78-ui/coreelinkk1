@@ -28,7 +28,7 @@ const AboutSection = () => {
   return (
     <section ref={ref} className="section-padding section-muted">
       <div className="container mx-auto container-padding">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -38,7 +38,7 @@ const AboutSection = () => {
             <span className="text-accent font-medium text-sm uppercase tracking-wider">
               About Corelink
             </span>
-            <h2 className="text-headline font-heading mt-4 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading mt-4 mb-6">
               We Transform Brands Into{" "}
               <span className="gradient-text">Digital Powerhouses</span>
             </h2>
@@ -63,10 +63,10 @@ const AboutSection = () => {
                 initial={{ opacity: 0, x: 50 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.7, delay: index * 0.15 }}
-                className="premium-card flex gap-5"
+                className="premium-card flex flex-col sm:flex-row gap-4 sm:gap-5"
               >
-                <div className="w-14 h-14 rounded-2xl gradient-accent flex items-center justify-center flex-shrink-0">
-                  <feature.icon className="w-6 h-6 text-primary-foreground" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl gradient-accent flex items-center justify-center flex-shrink-0">
+                  <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary-foreground" />
                 </div>
                 <div>
                   <h3 className="text-lg font-heading font-semibold mb-2">

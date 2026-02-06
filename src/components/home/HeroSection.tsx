@@ -52,10 +52,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-display font-heading leading-[1.1] mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading leading-[1.1] mb-6"
           >
             Elevate Your Brand's{" "}
-            <span className="gradient-text">Digital Presence</span>
+            <span className="gradient-text block sm:inline">Digital Presence</span>
           </motion.h1>
 
           {/* Sub-headline */}
@@ -63,7 +63,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-subheadline text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-2"
           >
             We craft strategic social media campaigns that drive engagement, 
             build authority, and convert followers into loyal customers.
@@ -74,15 +74,15 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 sm:px-0"
           >
-            <Button variant="hero" size="lg" className="group">
-              Book a Free Strategy Call
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            <Button variant="hero" size="lg" className="group w-full sm:w-auto">
+              <span>Book a Free Strategy Call</span>
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1 flex-shrink-0" />
             </Button>
-            <Button variant="heroOutline" size="lg" className="group">
-              <Play className="w-4 h-4" />
-              View Our Work
+            <Button variant="heroOutline" size="lg" className="group w-full sm:w-auto">
+              <Play className="w-4 h-4 flex-shrink-0" />
+              <span>View Our Work</span>
             </Button>
           </motion.div>
 
@@ -91,18 +91,18 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-20 grid grid-cols-3 gap-8 max-w-lg mx-auto"
+            className="mt-12 sm:mt-16 md:mt-20 grid grid-cols-3 gap-4 sm:gap-8 max-w-lg mx-auto"
           >
             {[
               { value: "50+", label: "Clients" },
-              { value: "2M+", label: "Reach Generated" },
-              { value: "300%", label: "Avg. Growth" },
+              { value: "2M+", label: "Reach" },
+              { value: "300%", label: "Growth" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-heading font-bold gradient-text">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-heading font-bold gradient-text">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-muted-foreground mt-1">{stat.label}</div>
               </div>
             ))}
           </motion.div>
