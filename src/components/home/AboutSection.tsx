@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Target, Sparkles, TrendingUp } from "lucide-react";
+import aboutVisual from "@/assets/about-visual.jpg";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -26,8 +27,22 @@ const AboutSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding section-muted">
-      <div className="container mx-auto container-padding">
+    <section ref={ref} className="section-padding section-muted relative overflow-hidden">
+      {/* Background decorative image */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 0.08 } : {}}
+        transition={{ duration: 1 }}
+        className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full pointer-events-none"
+      >
+        <img 
+          src={aboutVisual} 
+          alt="" 
+          className="w-full h-full object-contain object-right opacity-60"
+        />
+      </motion.div>
+      
+      <div className="container mx-auto container-padding relative z-10">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Content */}
           <motion.div

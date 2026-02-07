@@ -9,6 +9,7 @@ import {
   Globe,
   Share2,
 } from "lucide-react";
+import servicesVisual from "@/assets/services-visual.jpg";
 
 const services = [
   {
@@ -54,8 +55,22 @@ const ServicesSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="section-padding">
-      <div className="container mx-auto container-padding">
+    <section ref={ref} className="section-padding relative overflow-hidden">
+      {/* Background Image */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 0.06 } : {}}
+        transition={{ duration: 1 }}
+        className="absolute left-0 top-1/2 -translate-y-1/2 w-1/2 h-full pointer-events-none"
+      >
+        <img 
+          src={servicesVisual} 
+          alt="" 
+          className="w-full h-full object-contain object-left"
+        />
+      </motion.div>
+      
+      <div className="container mx-auto container-padding relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
