@@ -3,10 +3,28 @@ import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import FloatingShapes from "./FloatingShapes";
 import ParticleBackground from "./ParticleBackground";
+import heroAbstract from "@/assets/hero-abstract.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <motion.div
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0"
+        >
+          <img 
+            src={heroAbstract} 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/70" />
+        </motion.div>
+      </div>
+      
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating Shapes */}
@@ -18,25 +36,15 @@ const HeroSection = () => {
         {/* Gradient Orbs */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.4 }}
+          animate={{ opacity: 0.3 }}
           transition={{ duration: 2 }}
           className="absolute top-1/4 -right-20 w-[500px] h-[500px] rounded-full bg-accent/20 blur-[120px]"
         />
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.3 }}
+          animate={{ opacity: 0.2 }}
           transition={{ duration: 2, delay: 0.5 }}
           className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-accent-warm/20 blur-[100px]"
-        />
-        
-        {/* Grid Pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `linear-gradient(hsl(var(--foreground)) 1px, transparent 1px),
-                             linear-gradient(90deg, hsl(var(--foreground)) 1px, transparent 1px)`,
-            backgroundSize: '60px 60px'
-          }}
         />
       </div>
 

@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUpRight, TrendingUp } from "lucide-react";
+import growthVisual from "@/assets/growth-visual.jpg";
 
 const GrowthChart = () => {
   const ref = useRef(null);
@@ -21,14 +22,19 @@ const GrowthChart = () => {
 
   return (
     <section ref={ref} className="section-padding section-muted relative overflow-hidden">
-      {/* Background decoration */}
+      {/* Background Image */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 0.05 } : {}}
+        animate={isInView ? { opacity: 0.15 } : {}}
         transition={{ duration: 1 }}
-        className="absolute top-0 left-0 w-full h-full"
+        className="absolute inset-0 pointer-events-none"
       >
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 rounded-full bg-accent blur-[100px]" />
+        <img 
+          src={growthVisual} 
+          alt="" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/80" />
       </motion.div>
 
       <div className="container mx-auto container-padding relative z-10">
