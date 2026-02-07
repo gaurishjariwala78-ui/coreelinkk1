@@ -1,12 +1,20 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import FloatingShapes from "./FloatingShapes";
+import ParticleBackground from "./ParticleBackground";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
+        {/* Floating Shapes */}
+        <FloatingShapes />
+        
+        {/* Particle Animation */}
+        <ParticleBackground count={25} />
+        
         {/* Gradient Orbs */}
         <motion.div
           initial={{ opacity: 0 }}
